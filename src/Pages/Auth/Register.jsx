@@ -49,11 +49,11 @@ const Register = () => {
                 displayName: name,
                 photoURL: photo,
             }).then((res) => {
-
+                setUser(user);
                 toast.success("SignUp Successfull")
 
             })
-            setUser(user);
+
             navigate(`${location.state ? location.state : "/"}`)
 
         }).catch((error) => {

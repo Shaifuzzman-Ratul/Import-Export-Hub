@@ -28,12 +28,13 @@ const Navbar = () => {
                 <div className="navbar-start">
 
                     {/*  */}
-                    <div className='tooltip tooltip-right' data-tip={user?.displayName || user?.email}
+                    <div className='tooltip tooltip-right'
+                    //  data-tip={user?.displayName || user?.email}
                     >
 
                         <div className="dropdown dropdown-down">
                             <div tabIndex={0} role="button" className=" flex items-center flex-row-reverse ">
-                                <a className="btn btn-ghost text-xl md:text-2xl lg:text-3xl font-extrabold ">Trade<span className='text-indigo-600'>Port</span></a> <FaBars />
+                                <a className="btn btn-ghost text-xl md:text-2xl lg:text-3xl font-extrabold ">TRADE<span className='text-indigo-600'>HUB</span></a> <FaBars />
 
                             </div>
                             <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
