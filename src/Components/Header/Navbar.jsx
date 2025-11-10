@@ -72,10 +72,33 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center flex flex-col ">
 
-                    <div className='lg:grid  lg:grid-cols-2 gap-5 pt-1 text-gray-500 text-sm hidden md:block'>
-                        <NavLink to="/profile"><p>My Profile</p></NavLink>
-                        <NavLink to="/"> <p>Home</p></NavLink>
-                        {/* <NavLink to="/view"><p>Availabe Skills</p></NavLink> */}
+                    <div className=' lg:flex gap-4 pt-1 text-gray-600 text-sm hidden md:block font-semibold '>
+                        <NavLink to="/" className={({ isActive }) =>
+                            isActive ? "text-blue-700 underline" : "text-gray-600"
+                        }> <p className="hover:underline hover:text-blue-400">Home</p></NavLink>
+
+
+                        <NavLink to="/all-products" className={({ isActive }) => {
+                            isActive ? "text-blue-700 underline" : "text-gray-600"
+                        }}><p className="hover:underline hover:text-blue-400">All Products</p></NavLink>
+
+
+                        <NavLink to="/add-exports" className={({ isActive }) => {
+                            isActive ? "text-blue-700 underline" : "text-gray-600"
+                        }}><p className="hover:underline hover:text-blue-400">Add Exports</p></NavLink>
+
+
+                        <NavLink to="/exports" className={({ isActive }) => {
+                            isActive ? "text-blue-700 underline" : "text-gray-600"
+                        }}><p className="hover:underline hover:text-blue-400">My Exports</p></NavLink>
+
+
+
+                        <NavLink to="/imports" className={({ isActive }) =>
+                            isActive ? "text-blue-600 underline" : "text-gray-600"
+                        }><p className="hover:underline hover:text-blue-400">My Imports</p></NavLink>
+
+
                     </div>
 
                 </div>

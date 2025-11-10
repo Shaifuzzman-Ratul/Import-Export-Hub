@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
             <footer className="footer footer-horizontal footer-center bg-black text-base-content rounded p-10">
 
-                <p className='text-white font-extrabold text-5xl  lg:text-9xl flex flex-row w-full justify-center items-center'>TRADE<span className='text-indigo-600'>HUB</span></p>
+                <p className='text-white font-extrabold text-5xl  lg:text-8xl flex flex-row w-full justify-center items-center'>TRADE<span className='text-indigo-600'>HUB</span></p>
                 <nav>
                     <div className="grid grid-flow-col gap-4 text-white">
                         <a>
