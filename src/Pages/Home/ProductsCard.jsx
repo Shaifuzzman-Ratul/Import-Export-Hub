@@ -3,8 +3,10 @@ import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router';
 
 const ProductsCard = ({ data }) => {
-    console.log(data);
+    // console.log(data);
     const { availableQuantity, createdAt, originCountry, price, productImage, productName, rating, _id } = data;
+    // console.log(_id);
+
 
     return (
         <div>
@@ -23,7 +25,7 @@ const ProductsCard = ({ data }) => {
                     </h2>
                     <h2 className="card-title font-bold p-3">{productName
                     }</h2>
-                    <p className='font-semibold text-md pl-3'><span className=''>Origin Country :</span> <div className="badge border-2 border-indigo-500 bg-gray-100 text-indigo-500 text-sm">{originCountry}</div></p>
+                    <div className='font-semibold text-md pl-3'><span className=''>Origin Country :</span> <div className="badge border-2 border-indigo-500 bg-gray-100 text-indigo-500 text-sm">{originCountry}</div></div>
                     <p className='font-semibold pl-3'>Availabe : <span className='text-indigo-600 '>{availableQuantity}</span></p>
                     {/* #4a1437 */}
                     <div className="card-actions justify-between items-center">

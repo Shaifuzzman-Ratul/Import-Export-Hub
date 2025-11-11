@@ -7,6 +7,8 @@ import Login from "../Pages/Auth/Login";
 import Reset from "../Pages/Auth/Reset";
 import Allproducts from "../Pages/Home/Allproducts";
 import AddProducts from "../Pages/Home/AddProducts";
+import ProductsDetails from "../Pages/Home/ProductsDetails";
+import Loader from "../Pages/Loader";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -30,10 +32,17 @@ const router = createBrowserRouter([
             {
                 path: '/all-products',
                 element: <Allproducts></Allproducts>,
-                loader: () => fetch('http://localhost:3000/products')
+                // loader: () => fetch('http://localhost:3000/products'),
+                hydrateFallbackElement: <Loader></Loader>
             }, {
                 path: 'add-exports',
                 element: <AddProducts></AddProducts>
+            }
+            , {
+                path: '/details/:id',
+                element: <ProductsDetails></ProductsDetails>,
+                loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`),
+                hydrateFallbackElement: <Loader></Loader>
             }
         ]
 

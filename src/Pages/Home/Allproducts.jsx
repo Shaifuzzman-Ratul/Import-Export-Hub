@@ -1,9 +1,18 @@
-import React from 'react';
-import { useLoaderData } from 'react-router';
+import React, { useEffect, useState } from 'react';
+// import { useLoaderData } from 'react-router';
 import ProductsCard from './ProductsCard';
+import Loader from '../Loader';
 
 const Allproducts = () => {
-    const allData = useLoaderData();
+    // const promiseData = useLoaderData();
+    // console.log();
+    // const [allData, setAllData] = useState([]);
+    // const [loading, setLoading] = useState(true);
+
+    const [allData, setData] = useState([]); useEffect(() => { fetch('http://localhost:3000/products').then(res => res.json()).then(data => { setData(data) }) }, [])
+
+    console.log(allData);
+
 
     return (
         <div >
