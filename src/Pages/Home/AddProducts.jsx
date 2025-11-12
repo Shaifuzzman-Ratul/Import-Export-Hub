@@ -36,6 +36,19 @@ const AddProducts = () => {
             console.log(e);
 
         })
+        fetch('http://localhost:3000/exports', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        }).then(res => res.json()).then(data => {
+            console.log(data);
+
+        }).catch(e => {
+            console.log(e);
+
+        })
     }
     useEffect(() => {
         Aos.init({

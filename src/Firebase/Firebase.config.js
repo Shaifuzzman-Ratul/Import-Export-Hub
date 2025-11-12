@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyASJ_aoXgTB5Vq5C8qEDfiKnqMeWDYyv3U",
-    authDomain: "import-export-hub-d128e.firebaseapp.com",
-    projectId: "import-export-hub-d128e",
-    storageBucket: "import-export-hub-d128e.firebasestorage.app",
-    messagingSenderId: "815463067551",
-    appId: "1:815463067551:web:e103442a5d5428848757aa"
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID,
 };
 const app = initializeApp(firebaseConfig);
 export default app
