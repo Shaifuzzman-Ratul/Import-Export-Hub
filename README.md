@@ -1,16 +1,25 @@
-# React + Vite
+ Import Export Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web platform where users can browse global products, manage exports, and import products into their personal "My Imports" section with ease. Clean UI, real-time sync, and secure user data.  
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#  Live Site
+(https://your-live-site-url.com)
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+# Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse Products: View all products in a responsive grid with details like price, rating, and available quantity.  
+- Product Details & Import: See detailed product info and import products with quantity validation.  
+- Manage My Imports & Exports: Private pages to view, update, or remove products you imported or exported.  
+- Add New Exports: Add new products for export with a form, automatically updating the product list.  
+- Dynamic Page Titles: Page titles update dynamically based on current page or product using React Helmet.  
+
+
+
+# 🛠️ Tech Stack
+
+- **Frontend: React.js, React Router, Tailwind CSS, React Helmet, SweetAlert2, react-hot-toast  
+- **Backend: Node.js, Express.js, MongoDB Atlas  
+
