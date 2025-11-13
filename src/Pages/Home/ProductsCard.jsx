@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const ProductsCard = ({ data }) => {
     // console.log(data);
-    const { availableQuantity, createdAt, originCountry, price, productImage, productName, rating, _id } = data;
+    const { availableQuantity, originCountry, price, productImage, productName, rating, _id } = data;
     // console.log(_id);
     useEffect(() => {
         Aos.init({

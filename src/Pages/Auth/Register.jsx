@@ -57,10 +57,9 @@ const Register = () => {
             navigate(`${location.state ? location.state : "/"}`)
 
         }).catch((error) => {
-            // const errorCode = error.code;
             const errorMessage = error.message;
             toast.error(errorMessage)
-            // alert(errorCode)
+
 
         });
 
@@ -120,7 +119,7 @@ const Register = () => {
                 </span>
                 {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
 
-                <button type='submit' className="btn btn-neutral mt-4">Register</button>
+                <button type='submit' className="btn btn-primary  mt-4">Register</button>
             </fieldset></form>
             {/* */}
             <button onClick={handleGoogle} className=" pl-22 pr-16 btn border-2  rounded-md border-black bg-white text-black ">

@@ -113,6 +113,40 @@ const Navbar = () => {
                     {/* <button */}
                 </div>
                 <div className="navbar-end gap-3">
+
+
+
+                    {user && (
+                        <div className="dropdown dropdown-end z-50">
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                className="btn btn-ghost btn-circle avatar"
+                            >
+                                <div className="w-9 border-2 border-gray-300 rounded-full">
+                                    <img
+                                        alt="User Avatar"
+                                        referrerPolicy="no-referrer"
+                                        src={
+                                            user.photoURL ||
+                                            "no photo"
+                                        }
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {
+
+                        user ? <button onClick={handleLogout} className="btn font-bold text-[#422ad5] border-[#422ad5]">Logout</button> : <Link to="/login">
+                            <button className="btn font-bold text-[#422ad5] border-[#422ad5]">Login</button></Link>
+
+                    }
+
+                    {
+                        user ? "" : <Link to="/register"><button className="btn btn-primary">Sign In</button></Link>
+                    }
                     <button><input
                         type="checkbox"
                         onChange={(e) => handleTheme(e.target.checked)}
@@ -123,15 +157,6 @@ const Navbar = () => {
                             {theme === "dark" ? "Dark" : "Light"}
                         </p>
                     </button>
-                    {
-
-                        user ? <button onClick={handleLogout} className="btn font-bold text-[#422ad5] border-[#422ad5]">Logout</button> : <Link to="/login">
-                            <button className="btn font-bold text-[#422ad5] border-[#422ad5]">Login</button></Link>
-
-                    }
-                    {
-                        user ? "" : <Link to="/register"><button className="btn btn-primary">Sign In</button></Link>
-                    }
 
 
                 </div>
