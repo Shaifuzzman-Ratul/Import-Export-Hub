@@ -23,7 +23,7 @@ const ProductsDetails = () => {
         const newLimit = limit - quantity;
 
         try {
-            const res = await fetch(`http://localhost:3000/products/${id}`, {
+            const res = await fetch(`https://trade-hub-server-indol.vercel.app/products/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
@@ -43,7 +43,7 @@ const ProductsDetails = () => {
             toast.error(err);
         }
 
-        fetch('http://localhost:3000/imports', {
+        fetch('https://trade-hub-server-indol.vercel.app/imports', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -65,11 +65,15 @@ const ProductsDetails = () => {
             <div className='w-11/12 mx-auto my-8'>
                 <div className='flex flex-col lg:flex-row lg:gap-16 items-start'>
                     {/* Image with fixed width/height for sm, md, lg */}
+
                     <img
-                        className='w-[300px] h-[250px] sm:w-[400px] sm:h-[300px] md:w-[500px] md:h-[400px] lg:w-[600px] lg:h-[500px] rounded-2xl mb-4 lg:mb-0 object-cover'
+
+
                         src={productImage}
                         alt={productName}
+                        className='w-[300px] h-[250px] sm:w-[400px] sm:h-[300px] md:w-[500px] md:h-[400px] lg:w-[600px] lg:h-[500px] rounded-2xl mb-4 lg:mb-0 object-cover'
                     />
+
 
                     <div className='m-4 lg:m-8 py-3'>
                         <p className='mt-4 mb-4 font-extrabold text-3xl'>{productName}</p>

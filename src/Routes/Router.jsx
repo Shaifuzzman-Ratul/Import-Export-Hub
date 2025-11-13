@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/all-products',
                 element: <Allproducts></Allproducts>,
-                loader: () => fetch('http://localhost:3000/products'),
+                loader: () => fetch('https://trade-hub-server-indol.vercel.app/products'),
                 hydrateFallbackElement: <Loader></Loader>
             }, {
                 path: 'add-exports',
@@ -44,21 +44,24 @@ const router = createBrowserRouter([
             , {
                 path: '/details/:id',
                 element: <PrivateRoute><ProductsDetails></ProductsDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`),
+                loader: ({ params }) => fetch(`https://trade-hub-server-indol.vercel.app/products/${params.id}`),
                 hydrateFallbackElement: <Loader></Loader>
             },
             {
                 path: '/exports',
                 element: <PrivateRoute><MyExport></MyExport></PrivateRoute>,
-                loader: () => fetch('http://localhost:3000/exports'),
+                loader: () => fetch('https://trade-hub-server-indol.vercel.app/exports'),
                 hydrateFallbackElement: <Loader></Loader>
 
             },
             {
                 path: '/imports',
                 element: <PrivateRoute><MyImportPage></MyImportPage></PrivateRoute>,
-                loader: () => fetch('http://localhost:3000/imports'),
+                loader: () => fetch('https://trade-hub-server-indol.vercel.app/imports'),
                 hydrateFallbackElement: <Loader></Loader>
+            },
+            {
+
             }
 
         ]

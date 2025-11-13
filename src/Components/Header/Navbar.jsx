@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link, NavLink } from 'react-router';
 import toast from "react-hot-toast";
@@ -8,7 +8,18 @@ import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, LogOut } = use(AuthContext)
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light")
+    useEffect(() => {
+        const html = document.querySelector('html')
+        html.setAttribute("data-theme", theme)
 
+        localStorage.setItem("theme", theme)
+    }, [theme])
+    const handleTheme = (Check) => {
+        // console.log(Check);
+        setTheme(Check ? "dark" : "light")
+
+    }
     const handleLogout = () => {
         LogOut().then(() => {
             toast.success('Logout Successfull !');
@@ -99,9 +110,19 @@ const Navbar = () => {
 
 
                     </div>
-
+                    {/* <button */}
                 </div>
                 <div className="navbar-end gap-3">
+                    <button><input
+                        type="checkbox"
+                        onChange={(e) => handleTheme(e.target.checked)}
+                        checked={theme === "dark"}
+                        className="toggle"
+                    />
+                        <p className="text-xs font-medium">
+                            {theme === "dark" ? "Dark" : "Light"}
+                        </p>
+                    </button>
                     {
 
                         user ? <button onClick={handleLogout} className="btn font-bold text-[#422ad5] border-[#422ad5]">Logout</button> : <Link to="/login">

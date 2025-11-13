@@ -23,7 +23,7 @@ const Reset = () => {
             <div className="flex justify-center">
 
                 <form onSubmit={handleReset}>
-                    <fieldset className="fieldset bg-[#deceef] border-base-300 rounded-box w-xs border p-4">
+                    <fieldset className="fieldset bg-[#9380a7] border-base-300 rounded-box w-xs border p-4">
                         <h1 className="font-bold text-3xl">Forget Password</h1>
                         <p className="font-extralight p-3 text-sm">
                             Enter your email and we’ll send you a reset link.

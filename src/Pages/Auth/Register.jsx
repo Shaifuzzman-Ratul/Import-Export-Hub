@@ -48,7 +48,7 @@ const Register = () => {
             updateProfile(user, {
                 displayName: name,
                 photoURL: photo,
-            }).then((res) => {
+            }).then(() => {
                 setUser(user);
                 toast.success("SignUp Successfull")
 
@@ -98,21 +98,21 @@ const Register = () => {
         <div data-aos="flip-right" className=' flex items-center justify-center flex-col mt-6 mb-9'>
             <form onSubmit={handleRegister}> <fieldset className="fieldset  bg-white  border-base-300 rounded-box w-xs border p-4 relative">
                 {/* <legend className="fieldset-legend">Login </legend> */}
-                <h2 className='font-bold text-xl text-center p-5'>Register your account</h2>
+                <h2 className='font-bold text-xl text-center p-5 text-black'>Register your account</h2>
 
-                <label className="label">Your Name</label>
+                <label className="label text-black">Your Name</label>
                 <input name='name' type="text" className="input" placeholder="Enter your name" required />
 
-                <label className="label">Photo URL</label>
+                <label className="label text-black">Photo URL</label>
                 <input name='photo' type="text" className="input" placeholder="Photo URL" required />
 
 
-                <label className="label">Email</label>
+                <label className="label text-black">Email</label>
                 <input name='email' type="email" className="input" placeholder="Email" required />
 
-                <label className="label">Password</label>
+                <label className="label text-black">Password</label>
                 <input name='password' type={show ? "text" : "password"} className="input" placeholder="Password" required />
-                <span className='absolute right-8 top-85 cursor-pointer z-30' onClick={handleShow}>{
+                <span className='absolute right-7 top-85 cursor-pointer z-30' onClick={handleShow}>{
                     show ? <FaEyeSlash /> : <FaEye />
                 }
 
@@ -123,8 +123,8 @@ const Register = () => {
                 <button type='submit' className="btn btn-neutral mt-4">Register</button>
             </fieldset></form>
             {/* */}
-            <button onClick={handleGoogle} className=" pl-16 pr-16 btn border-2 border-black bg-white text-black ">
-                <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
+            <button onClick={handleGoogle} className=" pl-22 pr-16 btn border-2  rounded-md border-black bg-white text-black ">
+                <svg aria-label="Google logo" width="29" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
                 Signin  with Google
             </button>
 

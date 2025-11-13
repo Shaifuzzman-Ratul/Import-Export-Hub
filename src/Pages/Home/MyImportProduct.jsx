@@ -21,7 +21,7 @@ const MyImportProduct = ({ data }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
 
-            fetch(`http://localhost:3000/exports/${data._id}`, {
+            fetch(`https://trade-hub-server-indol.vercel.app/exports/${data._id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

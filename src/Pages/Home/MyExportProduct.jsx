@@ -23,7 +23,7 @@ const MyExportProduct = ({ data }) => {
 
         }
 
-        fetch(`http://localhost:3000/imports/${_id}`, {
+        fetch(`https://trade-hub-server-indol.vercel.app/imports/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const MyExportProduct = ({ data }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
 
-            fetch(`http://localhost:3000/exports/${_id}`, {
+            fetch(`https://trade-hub-server-indol.vercel.app/exports/${_id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

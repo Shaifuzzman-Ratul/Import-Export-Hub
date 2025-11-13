@@ -22,7 +22,7 @@ const AddProducts = () => {
             toast.error("Rating (0-5)")
             return;
         }
-        fetch('http://localhost:3000/products', {
+        fetch('https://trade-hub-server-indol.vercel.app/products', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const AddProducts = () => {
             console.log(e);
 
         })
-        fetch('http://localhost:3000/exports', {
+        fetch('https://trade-hub-server-indol.vercel.app/exports', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
