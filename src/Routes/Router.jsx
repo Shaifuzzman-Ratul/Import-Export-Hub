@@ -10,6 +10,8 @@ import AddProducts from "../Pages/Home/AddProducts";
 import ProductsDetails from "../Pages/Home/ProductsDetails";
 import Loader from "../Pages/Loader";
 import MyExport from "../Pages/Home/MyExport";
+import MyImportPage from "../Pages/Home/MyImportPage";
+import PrivateRoute from "../provider/PrivateRoute";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -37,20 +39,26 @@ const router = createBrowserRouter([
                 hydrateFallbackElement: <Loader></Loader>
             }, {
                 path: 'add-exports',
-                element: <AddProducts></AddProducts>
+                element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
             }
             , {
                 path: '/details/:id',
-                element: <ProductsDetails></ProductsDetails>,
+                element: <PrivateRoute><ProductsDetails></ProductsDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`),
                 hydrateFallbackElement: <Loader></Loader>
             },
             {
                 path: '/exports',
-                element: <MyExport></MyExport>,
-                loader: () => fetch('  http://localhost:3000/exports'),
+                element: <PrivateRoute><MyExport></MyExport></PrivateRoute>,
+                loader: () => fetch('http://localhost:3000/exports'),
                 hydrateFallbackElement: <Loader></Loader>
 
+            },
+            {
+                path: '/imports',
+                element: <PrivateRoute><MyImportPage></MyImportPage></PrivateRoute>,
+                loader: () => fetch('http://localhost:3000/imports'),
+                hydrateFallbackElement: <Loader></Loader>
             }
 
         ]

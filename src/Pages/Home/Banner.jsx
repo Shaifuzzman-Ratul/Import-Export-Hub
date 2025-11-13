@@ -20,7 +20,7 @@ const Banner = () => {
                 <p className="text-gray-600 text-lg">
                     From sourcing to shipping, Trade Hub helps you connect, collaborate, and succeed in international commerce.
                 </p>
-                <Link to="/view"> <button className="px-8 py-3 bg-[#432bd5] text-white rounded-xl font-semibold hover:bg-blue-700 transition">
+                <Link to="/add-exports"> <button className="px-8 py-3 bg-[#432bd5] text-white rounded-xl font-semibold hover:bg-blue-700 transition">
                     Get Started
                 </button></Link>
             </div>

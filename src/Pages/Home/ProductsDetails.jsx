@@ -8,7 +8,8 @@ const ProductsDetails = () => {
     const { productName, productImage, availableQuantity, description, originCountry, price, rating } = data;
     const id = data._id;
     const [limit, setLimit] = useState(availableQuantity || 0)
-    // setLimit(availableQuantity);
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const quantity = parseInt(e.target.quantity.value);
@@ -36,10 +37,27 @@ const ProductsDetails = () => {
             setLimit(newLimit);
             toast.success("Successfully imported product 🎉");
             document.getElementById('import_modal').close();
+            e.target.reset()
         } catch (err) {
             console.error(err);
             toast.error(err);
         }
+
+        fetch('http://localhost:3000/imports', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data
+            )
+
+        }).then(res => res.json()).then(data => {
+            console.log(data);
+
+        }).catch(e => {
+            console.log(e);
+
+        })
     };
 
     return (
@@ -89,7 +107,7 @@ const ProductsDetails = () => {
                                     </form>
 
                                     <h3 className="font-bold text-lg mb-4">Enter Quantity</h3>
-                                    {/* onSubmit={handleSubmit} */}
+
                                     <form onSubmit={handleSubmit}>
                                         <input
                                             name='quantity'

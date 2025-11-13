@@ -7,7 +7,6 @@ import { AuthContext } from '../../provider/AuthProvider';
 import Aos from 'aos';
 
 const Login = () => {
-    // const { LogIn, signInWithGoole, setUser } = use(AuthContext)
     const { LogIn, googleRegister, setUser } = use(AuthContext)
     const location = useLocation();
     const navigate = useNavigate()
@@ -27,7 +26,6 @@ const Login = () => {
             navigate(`${location.state ? location.state : "/"}`)
             toast.success('Successfully Login !')
         }).catch((error) => {
-            // const errorCode = error.code;
             const errorMessage = error.message;
             toast.error(errorMessage)
 
@@ -48,10 +46,10 @@ const Login = () => {
 
             navigate(`${location.state ? location.state : "/"}`)
         }).catch((error) => {
-            // const errorCode = error.code;
+
             const errorMessage = error.message;
             toast.error(errorMessage)
-            // alert(errorCode)
+
 
 
         })

@@ -28,9 +28,9 @@ const AddProducts = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(formData)
-        }).then(res => res.json()).then(data => {
+        }).then(res => res.json()).then(() => {
 
-            console.log(data);
+            // console.log(data);
             toast.success("Product add successfully! 🎉 ")
         }).catch(e => {
             console.log(e);

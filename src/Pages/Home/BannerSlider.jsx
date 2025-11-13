@@ -16,11 +16,15 @@ const BannerSlider = () => {
         });
     }, []);
     const slides = [
-        "https://i.ibb.co.com/JwbNXvFb/photo-1626785774625-ddcddc3445e9.jpg",
-        "https://i.ibb.co.com/Nds2fmGP/premium-photo-1661425715124-310ec1b49b8a.jpg",
-        "https://i.ibb.co.com/h1hdqKPF/photo-1542038784456-1ea8e935640e.jpg",
-        "https://i.ibb.co.com/hxmrrgc6/photo-1598520106830-8c45c2035460.jpg",
-        "https://i.ibb.co.com/fGGS23n7/photo-1734113542343-fc916b32ef17.jpg"
+        "https://i.ibb.co.com/dJWgGK8v/photo-1643622357625-c013987d90e7.jpg",
+
+        "https://i.ibb.co.com/7PKckyR/premium-photo-1664648184173-efaaeccd8548.jpg",
+        "https://i.ibb.co.com/wFnrFmVR/photo-1626379907480-29d844d603ca.jpg",
+
+        "https://i.ibb.co.com/Y73f9xsf/istockphoto-464433694-612x612.webp",
+
+        "https://i.ibb.co.com/bj61JpGf/premium-photo-1731696604052-d0c8527e7831.jpg",
+
     ];
 
     return (
