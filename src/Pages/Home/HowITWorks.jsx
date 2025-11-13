@@ -25,9 +25,7 @@ const HowITWorks = () => {
         >
 
             <div className="lg:pl-10 w-full lg:w-1/2">
-                <p className="font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide">
-                    How it works
-                </p>
+
 
                 <h1 className="text-2xl lg:text-3xl font-bold mt-2">
                     How TRADE
