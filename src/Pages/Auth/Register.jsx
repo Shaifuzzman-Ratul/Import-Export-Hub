@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { updateProfile } from 'firebase/auth';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Aos from 'aos';
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const { createUser, setUser, googleRegister } = use(AuthContext)
@@ -95,6 +96,10 @@ const Register = () => {
     }, []);
     return (
         <div data-aos="flip-right" className=' flex items-center justify-center flex-col mt-6 mb-9'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Trade Hub-Login</title>
+            </Helmet>
             <form onSubmit={handleRegister}> <fieldset className="fieldset  bg-white  border-base-300 rounded-box w-xs border p-4 relative">
                 {/* <legend className="fieldset-legend">Login </legend> */}
                 <h2 className='font-bold text-xl text-center p-5 text-black'>Register your account</h2>

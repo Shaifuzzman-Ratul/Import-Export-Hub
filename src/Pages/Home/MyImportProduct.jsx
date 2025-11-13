@@ -2,9 +2,10 @@ import React from 'react';
 // import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MyImportProduct = ({ data }) => {
-    console.log(data);
+    // console.log(data);
 
     const navigate = useNavigate();
 
@@ -20,32 +21,26 @@ const MyImportProduct = ({ data }) => {
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
-
-            fetch(`https://trade-hub-server-indol.vercel.app/exports/${data._id}`, {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-
-            }).then(res => res.json()).then(() => {
-
-                navigate('/imports')
-            }).catch(e => {
-                console.log(e);
-
-            })
             if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                });
+                fetch(`https://trade-hub-server-indol.vercel.app/imports/${data._id}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                        navigate('/imports');
+                    })
+                    .catch(err => Swal.fire("Error!", err.message, "error"));
             }
         });
-
     }
+
     return (
         <div className='max-w-[1200px] mx-auto pb-5'>
+
             <div className=''>
                 {/* console.log(data); */}
 

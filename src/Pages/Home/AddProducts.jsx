@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { IoIosArrowBack } from 'react-icons/io';
 import { Link } from 'react-router';
+import { Helmet } from 'react-helmet';
 
 const AddProducts = () => {
     const handleSubmit = (e) => {
@@ -59,6 +60,10 @@ const AddProducts = () => {
     }, []);
     return (
         <div className='max-w-[1200px] mx-auto '>
+            <Helmet>
+                <title>{'Trade Hub-Add Product'}</title>
+
+            </Helmet>
             <div>
                 <div className='p-3'>  <h2 className='flex items-center text-2xl font-bold'><span className='font-bold'><Link to={'/'}><IoIosArrowBack />
                 </Link></span><span>Add New Product</span></h2>

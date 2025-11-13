@@ -23,7 +23,7 @@ const MyExportProduct = ({ data }) => {
 
         }
 
-        fetch(`https://trade-hub-server-indol.vercel.app/imports/${_id}`, {
+        fetch(`https://trade-hub-server-indol.vercel.app/exports/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

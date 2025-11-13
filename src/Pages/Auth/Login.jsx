@@ -4,6 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
 import Aos from 'aos';
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { LogIn, googleRegister, setUser } = React.useContext(AuthContext);
@@ -78,7 +79,10 @@ const Login = () => {
 
     return (
         <div data-aos="flip-left" className='flex flex-col items-center justify-center mb-20 mt-20'>
-
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Trade Hub-Login</title>
+            </Helmet>
             <form onSubmit={handleLogin}>
                 <fieldset className="fieldset bg-white border-base-300 rounded-box w-xs border p-4 relative">
                     <h2 className='font-bold text-black text-xl text-center p-5'>Login Your account</h2>

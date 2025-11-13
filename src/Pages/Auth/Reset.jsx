@@ -1,6 +1,7 @@
 import React, { use, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../provider/AuthProvider';
+import { Helmet } from "react-helmet";
 
 const Reset = () => {
     const { reset } = use(AuthContext);
@@ -20,6 +21,10 @@ const Reset = () => {
     }
     return (
         <div className="min-h-screen flex flex-col justify-center items-center bg-linear-to-br from-purple-300 via-[#4f89f9] to-purple-300 text-center">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Trade Hub-Login</title>
+            </Helmet>
             <div className="flex justify-center">
 
                 <form onSubmit={handleReset}>

@@ -2,6 +2,7 @@ import React from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import { Link, useLoaderData } from 'react-router';
 import MyExportProduct from './MyExportProduct';
+import { Helmet } from "react-helmet";
 
 const MyExport = () => {
     const AllData = useLoaderData();
@@ -12,6 +13,10 @@ const MyExport = () => {
 
     return (
         <div className='max-w-[1200px] mx-auto'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Trade Hub-My Export</title>
+            </Helmet>
             <div className='p-3'>  <h2 className='flex items-center text-2xl font-bold'><span className='font-bold'><Link to={'/'}><IoIosArrowBack />
             </Link></span><span>My Export Products</span></h2>
                 <p className='pl-3 '>Update or delete products</p>

@@ -4,6 +4,7 @@ import ProductsCard from './ProductsCard';
 import Loader from '../Loader';
 import { useLoaderData } from 'react-router';
 import { useState } from 'react';
+import HelmetExport, { Helmet } from "react-helmet";
 
 const Allproducts = () => {
     const promiseData = useLoaderData();
@@ -20,6 +21,7 @@ const Allproducts = () => {
 
     return (
         <div className=' max-w-[1400px] mx-auto' >
+            <Helmet> <title>Trade Hub-All Products</title></Helmet>
             <div>
                 <div className='text-2xl font-bold mt-8'>All Products</div>
                 <p className=' mb-2'>Explore new products</p>
