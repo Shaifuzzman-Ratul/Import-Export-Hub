@@ -1,4 +1,4 @@
-# Import Export Hub 
+# Trade Hub 
 
 Live Site: [https://your-client-live-url.com](https://trade-hub00000.netlify.app/)
 
