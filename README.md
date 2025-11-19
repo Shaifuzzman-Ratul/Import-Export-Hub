@@ -1,9 +1,9 @@
-# Import Export Hub (Client)
+# Import Export Hub 
 
-Live Site: https://your-client-live-url.com
+Live Site: [https://your-client-live-url.com](https://trade-hub00000.netlify.app/)
 
 ## Project Overview
-Import Export Hub is a modern,  web platform that allows users to explore global products, manage their exports, and easily import products into their personal “My Imports” section with a single click. The platform features a clean and responsive user interface, real-time synchronization with the backend, and secure user authentication. Users can browse all products, view detailed product information, import products while respecting stock limits, and manage their own exports and imports efficiently.
+Trade Hub is a modern,  web platform that allows users to explore global products, manage their exports, and easily import products into their personal “My Imports” section with a single click. The platform features a clean and responsive user interface, real-time synchronization with the backend, and secure user authentication. Users can browse all products, view detailed product information, import products while respecting stock limits, and manage their own exports and imports efficiently.
 
 ## Features
 - **User Authentication:** Login & Registration using Email/Password and Google OAuth  
@@ -87,10 +87,9 @@ npm start
 
 ## 🔗 Live & Relevant Links
 
-[![Live Website](https://img.shields.io/badge/Live%20Website-🌐-blue)](https://your-client-live-link.com)  
-[![Server API](https://img.shields.io/badge/Server%20API-🔌-green)](https://your-server-live-link.com)  
-[![GitHub Client](https://img.shields.io/badge/GitHub-Client-181717?style=for-the-badge&logo=github)](https://github.com/your-username/import-export-hub-client)  
-[![GitHub Server](https://img.shields.io/badge/GitHub-Server-181717?style=for-the-badge&logo=github)](https://github.com/your-username/import-export-hub-server)  
-[![Documentation](https://img.shields.io/badge/Documentation-📄-orange)](https://github.com/your-username/import-export-hub-client/blob/main/README.md)
+[![Live Website](https://img.shields.io/badge/Live%20Website-🌐-blue)](https://trade-hub00000.netlify.app/) 
+ 
+[![GitHub Client](https://img.shields.io/badge/GitHub-Client-181717?style=for-the-badge&logo=github)](https://github.com/Shaifuzzman-Ratul/Import-Export-Hub) 
+[![GitHub Server](https://img.shields.io/badge/GitHub-Server-181717?style=for-the-badge&logo=github)]( https://github.com/Shaifuzzman-Ratul/trade-hubb-server)  
 
 
