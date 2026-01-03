@@ -5,8 +5,11 @@ import { Link } from 'react-router';
 
 const ProductsCard = ({ data }) => {
     // console.log(data);
-    const { availableQuantity, originCountry, price, productImage, productName, rating, _id } = data;
+    const { availableQuantity, originCountry, price, productImage, productName, rating, _id, description } = data;
     // console.log(_id);
+    const sortDescription = description.split('.');
+    // console.log(sortDescription[0]);
+
     useEffect(() => {
         Aos.init({
             duration: 1000,
@@ -33,6 +36,7 @@ const ProductsCard = ({ data }) => {
                     </h2>
                     <h2 className="card-title font-bold p-3">{productName
                     }</h2>
+                    <p>{sortDescription[0]}.</p>
                     <div className='font-semibold text-md pl-3'><span className=''>Origin Country :</span> <div className="badge border-2 border-indigo-100 bg-gray-100 text-indigo-500 text-sm">{originCountry}</div></div>
                     <p className='font-semibold pl-3'>Availabe : <span className='text-indigo-600 '>{availableQuantity}</span></p>
                     {/* #4a1437 */}

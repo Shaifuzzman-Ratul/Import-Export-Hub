@@ -33,9 +33,9 @@ const Navbar = () => {
     }
 
     return (
-        <div>
+        <div className="mb-6">
             {/* <Toaster></Toaster> */}
-            <div className="navbar bg-base-100 shadow-sm lg:pr-6 lg:pl-6">
+            <div className="fixed top-0 z-125 navbar bg-base-100 shadow-sm lg:pr-6 lg:pl-6">
                 <div className="navbar-start">
 
                     {/*  */}

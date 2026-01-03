@@ -44,7 +44,11 @@ const router = createBrowserRouter([
             , {
                 path: '/details/:id',
                 element: <PrivateRoute><ProductsDetails></ProductsDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://trade-hub-server-indol.vercel.app/products/${params.id}`),
+                loader: ({ params }) => fetch(`https://trade-hub-server-indol.vercel.app/products/${params.id}`, {
+                    headers: {
+                        authorization: "hello"
+                    }
+                }),
                 hydrateFallbackElement: <Loader></Loader>
             },
             {

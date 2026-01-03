@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-import { FaStar } from 'react-icons/fa';
+import { FaDownload, FaStar } from 'react-icons/fa';
 import { useLoaderData } from 'react-router';
 import { Helmet } from "react-helmet";
 
@@ -102,6 +102,12 @@ const ProductsDetails = () => {
                             >
                                 Import Now
                             </button>
+                            <button
+                                className="bg-primary ml-3 text-white btn"
+
+                            >
+                                <FaDownload /> Download Details
+                            </button>
 
                             <dialog id="import_modal" className="modal">
                                 <div className="modal-box">
@@ -128,6 +134,7 @@ const ProductsDetails = () => {
                                         >
                                             Submit
                                         </button>
+
                                     </form>
                                 </div>
                             </dialog>
