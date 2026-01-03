@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -7,20 +7,23 @@ import Aos from 'aos';
 import { Helmet } from "react-helmet";
 
 const Login = () => {
-    const { LogIn, googleRegister, setUser } = React.useContext(AuthContext);
+    const { Login, googleRegister, setUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
     const [Email, setEmail] = useState("");
+    const [password, setPassword] = useState('');
+
 
     const handleShow = () => setShow(!show);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+        // const email = e.target.email.value;
+        // const password = e.target.password.value;
+        // console.log(Email, password);
 
-        if (!email) {
+        if (!Email) {
             toast.error("Email is required!");
             return;
         }
@@ -40,9 +43,10 @@ const Login = () => {
             toast.error("Password must contain at least one uppercase letter!");
             return;
         }
+        console.log(Email, password);
 
-        setEmail(email);
-        LogIn(email, password)
+        setEmail(Email);
+        Login(Email, password)
             .then(() => {
                 toast.success('Successfully Logged In!');
                 navigate(location.state ? location.state : "/");
@@ -68,7 +72,23 @@ const Login = () => {
                 toast.error(error.message);
             });
     };
+    const handleDemo = () => {
+        const demoEmail = "demo@user.com";
+        const demoPassword = "1234@aB";
 
+        setEmail(demoEmail);
+        setPassword(demoPassword);
+
+        // await for state update, then login
+        setTimeout(() => {
+            Login(demoEmail, demoPassword)
+                .then(() => {
+                    toast.success("Logged in as Demo User!");
+                    navigate("/");
+                })
+                .catch((error) => toast.error(error.message));
+        }, 100);
+    };
     useEffect(() => {
         Aos.init({
             duration: 1000,
@@ -94,8 +114,7 @@ const Login = () => {
                         className="input"
                         placeholder="Email"
                         onChange={(e) => setEmail(e.target.value)}
-                        value={Email}
-                        required
+                        value={Email} required
                     />
 
                     <label className="label text-black">Password</label>
@@ -104,6 +123,9 @@ const Login = () => {
                         type={show ? "text" : "password"}
                         className="input"
                         placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+
                         required
                     />
                     <span className='absolute right-8 top-50 cursor-pointer z-30' onClick={handleShow}>
@@ -114,7 +136,7 @@ const Login = () => {
                     <button type='submit' className="btn  mt-4 w-full btn-primary">Login</button>
                 </fieldset>
             </form>
-
+            {/* <button type='submit' className="btn  mt-4  btn-primary w-[ 100px]">Login</button> */}
             <div className="mt-4 text-center">
                 <button onClick={handleGoogle} className="btn pl-22 pr-20 border-2 border-black bg-white text-black">
                     <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -131,6 +153,7 @@ const Login = () => {
                 <p className='text-sm font-semibold text-gray-500 text-center p-2'>
                     Don’t Have An Account? <Link to="/register"><span className='text-blue-700'>Register</span></Link>
                 </p>
+                <button onClick={handleDemo} className="btn  mt-4 text-white  bg-[#4533b5] w-[ 100px]">Login as Demo user</button>
             </div>
         </div>
     );
