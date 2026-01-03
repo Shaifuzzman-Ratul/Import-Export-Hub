@@ -20,10 +20,10 @@ const Allproducts = () => {
 
 
     return (
-        <div className=' max-w-[1400px] mx-auto' >
+        <div className=' max-w-[1400px] mx-auto mt-6 ' >
             <Helmet> <title>Trade Hub-All Products</title></Helmet>
             <div>
-                <div className='text-2xl font-bold mt-8'>All Products</div>
+                <div className='text-3xl font-bold mt-8'>All Products</div>
                 <p className=' mb-2'>Explore new products</p>
                 <div>
                     <label className="input">

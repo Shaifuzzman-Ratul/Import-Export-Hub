@@ -1,11 +1,16 @@
 import Aos from 'aos';
-import React, { useEffect } from 'react';
+import React, { use, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { IoIosArrowBack } from 'react-icons/io';
-import { Link } from 'react-router';
+import { Link, Navigate, useNavigate } from 'react-router';
 import { Helmet } from 'react-helmet';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const AddProducts = () => {
+    const { user } = use(AuthContext);
+    console.log(user);
+    console.log(user.photoURL);
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = {
@@ -16,7 +21,12 @@ const AddProducts = () => {
             rating: e.target.rating.value,
             availableQuantity: e.target.available.value,
             createdAt: new Date(),
-            description: e.target.description.value
+            description: e.target.description.value,
+            keyInfo: e.target.keyInfo.value,
+            userName: user.displayName,
+            UserEmail: user.email,
+            userPhoto: user.photoURL
+
 
         }
         if (formData.rating > 5 || formData.rating < 0) {
@@ -32,7 +42,8 @@ const AddProducts = () => {
         }).then(res => res.json()).then(() => {
 
             // console.log(data);
-            toast.success("Product add successfully! 🎉 ")
+            toast.success("Product add successfully! 🎉 ");
+            navigate("/all-products");
         }).catch(e => {
             console.log(e);
 
@@ -96,6 +107,9 @@ const AddProducts = () => {
 
                                 <span> <label className="label">Available quantity</label>
                                     <input name='available' type="number" className="input w-full" placeholder="Available " required /></span></div>
+
+                            <label className="label">Key Info</label>
+                            <textarea name="keyInfo" id="" className="input w-full" placeholder="Key Information " rows="3" required></textarea>
 
                             <label className="label">Description</label>
                             <textarea name="description" id="" className="input w-full" placeholder="Description " rows="3" required></textarea>

@@ -20,7 +20,7 @@ const ProductsCard = ({ data }) => {
     }, []);
 
     return (
-        <div>
+        <div className=' flex'>
             <div data-aos="fade-down" className="card bg-base-100 w-full min-w-xs shadow-sm mt-5 mb-8 ">
                 <figure>
                     <img className='w-full h-[250px]'
@@ -36,7 +36,7 @@ const ProductsCard = ({ data }) => {
                     </h2>
                     <h2 className="card-title font-bold p-3">{productName
                     }</h2>
-                    <p>{sortDescription[0]}.</p>
+                    <p className='p-3'>{sortDescription[0]}.</p>
                     <div className='font-semibold text-md pl-3'><span className=''>Origin Country :</span> <div className="badge border-2 border-indigo-100 bg-gray-100 text-indigo-500 text-sm">{originCountry}</div></div>
                     <p className='font-semibold pl-3'>Availabe : <span className='text-indigo-600 '>{availableQuantity}</span></p>
                     {/* #4a1437 */}
